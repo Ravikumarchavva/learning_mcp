@@ -1,0 +1,47 @@
+[project]
+name = "learning-mcp"
+version = "0.1.0"
+requires-python = ">=3.12"
+description = "A simple example of using the MCP library to create a learning agent."
+authors = [{ name = "ravikumar", email = "chavvaravikumarreddy2004@gmail.com" }]
+license = { file = "LICENSE" }
+dependencies = [
+    "google-genai>=1.14.0",
+    "httpx>=0.28.1",
+    "mcp[cli]>=1.8.0",
+]
+
+
+
+keywords = ["mcp", "learning", "agent", "gemini"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+
+    "Intended Audience :: Developers",
+
+    "Topic :: Software Development :: Libraries :: Python Modules",
+
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+readme = "README.md"
+
+[project.urls]
+Respository = "https://github.com/Ravikumarchavva/learning_mcp.git"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[project.scripts]
+learning-mcp = "learning_mcp:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+]
